@@ -69,9 +69,9 @@ core.register_craft({
 core.register_craft({
 	output = 'amber:glass_medieval 4',
 	recipe = {
-		{'default:steel_ingot', 'amber:glass_tile', 'default:steel_ingot'},
+		{xcompat.materials.steel_ingot, 'amber:glass_tile', xcompat.materials.steel_ingot},
 		{'amber:glass_tile', '', 'amber:glass_tile'},
-		{'default:steel_ingot', 'amber:glass_tile', 'default:steel_ingot'},
+		{xcompat.materials.steel_ingot, 'amber:glass_tile', xcompat.materials.steel_ingot},
 	}
 })
 
@@ -125,7 +125,7 @@ core.register_craft({
 -- Root System --
 
 core.register_craft({
-	output = 'default:wood 2',
+	output = xcompat.materials.apple_planks..' 2',
 	recipe = {
 		{'amber:tree_all'},
 	}
@@ -148,7 +148,7 @@ core.register_craft({
 })
 
 core.register_craft({
-	output = 'default:stick',
+	output = xcompat.materials.stick,
 	recipe = {
 		{'amber:root'},
 	}

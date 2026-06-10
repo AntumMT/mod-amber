@@ -4,7 +4,7 @@
 core.register_ore({
 		ore_type       = "scatter",
 		ore            = "amber:dirt",
-		wherein        = "default:dirt",
+		wherein        = xcompat.materials.dirt,
 		clust_scarcity = 12 * 12 * 12,
 		clust_num_ores = 9,
 		clust_size     = 3,
@@ -30,7 +30,7 @@ for i=1,n do
 core.register_ore({
 		ore_type       = "scatter",
 		ore            = "amber:matrix_" .. types[i]:lower(),
-		wherein        = "default:stone",
+		wherein        = xcompat.materials.stone,
 		clust_scarcity = 75 * 75 * 75,
 		clust_num_ores = 1,
 		clust_size     = 25,
@@ -42,7 +42,7 @@ end
 
 core.register_decoration({
 		deco_type = "schematic",
-		place_on = {"default:dirt_with_grass"},
+		place_on = {xcompat.materials.dirt_with_grass},
 		sidelen = 8,
     fill_ratio = 0.0001,
 		biomes = {"deciduous_forest"},
@@ -55,7 +55,7 @@ core.register_decoration({
 
   core.register_decoration({
   		deco_type = "schematic",
-  		place_on = {"default:dirt_with_grass"},
+  		place_on = {xcompat.materials.dirt_with_grass},
   		sidelen = 8,
       fill_ratio = 0.00005,
   		biomes = {"deciduous_forest"},
@@ -68,7 +68,7 @@ core.register_decoration({
 
     core.register_decoration({
     		deco_type = "schematic",
-    		place_on = {"default:dirt_with_grass"},
+    		place_on = {xcompat.materials.dirt_with_grass},
     		sidelen = 8,
         fill_ratio = 0.00005,
     		biomes = {"deciduous_forest"},
@@ -81,7 +81,7 @@ core.register_decoration({
 
       core.register_decoration({
       		deco_type = "schematic",
-      		place_on = {"default:dirt_with_grass"},
+      		place_on = {xcompat.materials.dirt_with_grass},
       		sidelen = 8,
           fill_ratio = 0.00001,
       		biomes = {"deciduous_forest"},
@@ -94,7 +94,7 @@ core.register_decoration({
 
 core.register_decoration({
 		deco_type = "schematic",
-		place_on = {"default:dirt_with_snow", "default:dirt_with_grass"},
+		place_on = {"default:dirt_with_snow", xcompat.materials.dirt_with_grass},
 		sidelen = 8,
     fill_ratio = 0.0001,
 		biomes = {"taiga", "coniferous_forest", "floatland_coniferous_forest"},
@@ -106,7 +106,7 @@ core.register_decoration({
 
 core.register_decoration({
 		deco_type = "schematic",
-		place_on = {"default:dirt_with_snow", "default:dirt_with_grass"},
+		place_on = {"default:dirt_with_snow", xcompat.materials.dirt_with_grass},
 		sidelen = 8,
     fill_ratio = 0.00005,
 		biomes = {"taiga", "coniferous_forest", "floatland_coniferous_forest"},
@@ -118,7 +118,7 @@ core.register_decoration({
 
 core.register_decoration({
 		deco_type = "schematic",
-		place_on = {"default:dirt_with_snow", "default:dirt_with_grass"},
+		place_on = {"default:dirt_with_snow", xcompat.materials.dirt_with_grass},
 		sidelen = 8,
     fill_ratio = 0.00005,
 		biomes = {"taiga", "coniferous_forest", "floatland_coniferous_forest"},
@@ -130,7 +130,7 @@ core.register_decoration({
 
 core.register_decoration({
 		deco_type = "schematic",
-		place_on = {"default:dirt_with_snow", "default:dirt_with_grass"},
+		place_on = {"default:dirt_with_snow", xcompat.materials.dirt_with_grass},
 		sidelen = 8,
     fill_ratio = 0.00001,
 		biomes = {"taiga", "coniferous_forest", "floatland_coniferous_forest"},
@@ -145,7 +145,16 @@ core.register_decoration({
 core.register_ore({
 		ore_type        = "blob",
 		ore             = "air",
-		wherein         = {"default:stone", "default:stone_with_coal", "default:stone_with_iron", "default:stone_with_copper", "default:stone_with_tin", "default:gravel", "default:sand", "default:silver_sand"},
+		wherein         = {
+												xcompat.materials.stone,
+												"default:stone_with_coal",
+												"default:stone_with_iron",
+												"default:stone_with_copper",
+												"default:stone_with_tin",
+												xcompat.materials.gravel,
+												xcompat.materials.sand,
+												"default:silver_sand"
+											},
 		clust_scarcity  = 16 * 16 * 16,
 		clust_size      = 15,
 		y_min           = -64,
@@ -163,7 +172,16 @@ core.register_ore({
 core.register_ore({
 		ore_type        = "blob",
 		ore             = "amber:root_wall",
-		wherein         = {"default:stone", "default:stone_with_coal", "default:stone_with_iron", "default:stone_with_copper", "default:stone_with_tin", "default:gravel", "default:sand", "default:silver_sand"},
+		wherein         = {
+												xcompat.materials.stone,
+												"default:stone_with_coal",
+												"default:stone_with_iron",
+												"default:stone_with_copper",
+												"default:stone_with_tin",
+												xcompat.materials.gravel,
+												xcompat.materials.sand,
+												"default:silver_sand"
+											},
 		clust_scarcity  = 8 * 6 * 8,
 		clust_size      = 25,
 		y_min           = -64,
@@ -181,7 +199,16 @@ core.register_ore({
 	core.register_ore({
 			ore_type        = "blob",
 			ore             = "amber:root_wall",
-			wherein         = {"default:stone", "default:stone_with_coal", "default:stone_with_iron", "default:stone_with_copper", "default:stone_with_tin", "default:gravel", "default:sand", "default:silver_sand"},
+			wherein         = {
+													xcompat.materials.stone,
+													"default:stone_with_coal",
+													"default:stone_with_iron",
+													"default:stone_with_copper",
+													"default:stone_with_tin",
+													xcompat.materials.gravel,
+													xcompat.materials.sand,
+													"default:silver_sand"
+												},
 			clust_scarcity  = 3 * 2 * 3,
 			clust_size      = 10,
 			y_min           = -64,
@@ -199,7 +226,17 @@ core.register_ore({
 	core.register_ore({
 			ore_type       = "scatter",
 			ore            = "air",
-			wherein        = {"amber:root_wall", "default:stone", "default:stone_with_coal", "default:stone_with_iron", "default:stone_with_copper", "default:stone_with_tin", "default:gravel", "default:sand", "default:silver_sand"},
+			wherein        = {
+													"amber:root_wall",
+													xcompat.materials.stone,
+													"default:stone_with_coal",
+													"default:stone_with_iron",
+													"default:stone_with_copper",
+													"default:stone_with_tin",
+													xcompat.materials.gravel,
+													xcompat.materials.sand,
+													"default:silver_sand"
+												},
 			clust_scarcity = 3 * 4 * 3,
 			clust_num_ores = 32,
 			clust_size     = 18,
@@ -213,7 +250,19 @@ core.register_ore({
 core.register_ore({
 		ore_type        = "blob",
 		ore             = "amber:tree_all",
-		wherein         = {"default:water_source", "air", "amber:root_wall", "default:stone", "default:stone_with_coal", "default:stone_with_iron", "default:stone_with_copper", "default:stone_with_tin", "default:gravel", "default:sand", "default:silver_sand"},
+		wherein         = {
+												xcompat.materials.water_source,
+												"air",
+												"amber:root_wall",
+												xcompat.materials.stone,
+												"default:stone_with_coal",
+												"default:stone_with_iron",
+												"default:stone_with_copper",
+												"default:stone_with_tin",
+												xcompat.materials.gravel,
+												xcompat.materials.sand,
+												"default:silver_sand"
+											},
 		clust_scarcity  = 10 * 2 * 10,
 		clust_size      = 16,
 		y_min           = -72,
@@ -231,7 +280,7 @@ core.register_ore({
 core.register_ore({
 		ore_type       = "scatter",
 		ore            = "amber:root_wall",
-		wherein        = {"amber:root_wall", "default:stone"},
+		wherein        = {"amber:root_wall", xcompat.materials.stone},
 		clust_scarcity = 3 * 3 * 3,
 		clust_num_ores = 12,
 		clust_size     = 6,
@@ -264,7 +313,19 @@ core.register_ore({
 core.register_ore({
 		ore_type        = "blob",
 		ore             = "amber:tree_all",
-		wherein         = {"default:water_source", "air", "amber:root_wall", "default:stone", "default:stone_with_coal", "default:stone_with_iron", "default:stone_with_copper", "default:stone_with_tin", "default:gravel", "default:sand", "default:silver_sand"},
+		wherein         = {
+												xcompat.materials.water_source,
+												"air",
+												"amber:root_wall",
+												xcompat.materials.stone,
+												"default:stone_with_coal",
+												"default:stone_with_iron",
+												"default:stone_with_copper",
+												"default:stone_with_tin",
+												xcompat.materials.gravel,
+												xcompat.materials.sand,
+												"default:silver_sand"
+											},
 		clust_scarcity  = 10 * 4 * 10,
 		clust_size      = 16,
 		y_min           = -72,
@@ -294,7 +355,7 @@ core.register_ore({
 
 core.register_ore({
 		ore_type        = "blob",
-		ore             = "default:dirt",
+		ore             = xcompat.materials.dirt,
 		wherein         = {"amber:root_wall", "air"},
 		clust_scarcity  = 16 * 16 * 16,
 		clust_size      = 10,
@@ -313,7 +374,7 @@ core.register_ore({
 
 core.register_ore({
 		ore_type       = "scatter",
-		ore            = "default:dirt",
+		ore            = xcompat.materials.dirt,
 		wherein        = "amber:root_wall",
 		clust_scarcity = 8 * 8 * 8,
 		clust_num_ores = 16,
@@ -324,7 +385,7 @@ core.register_ore({
 
 core.register_ore({
 		ore_type       = "scatter",
-		ore            = "default:dirt",
+		ore            = xcompat.materials.dirt,
 		wherein        = "amber:root_wall",
 		clust_scarcity = 16 * 16 * 16,
 		clust_num_ores = 12,
@@ -335,7 +396,7 @@ core.register_ore({
 
 core.register_ore({
 		ore_type       = "scatter",
-		ore            = "default:dirt",
+		ore            = xcompat.materials.dirt,
 		wherein        = "amber:root_wall",
 		clust_scarcity = 16 * 16 * 16,
 		clust_num_ores = 12,
@@ -349,7 +410,7 @@ core.register_ore({
 core.register_ore({
 		ore_type       = "scatter",
 		ore            = "amber:root_wall",
-		wherein        = "default:dirt",
+		wherein        = xcompat.materials.dirt,
 		clust_scarcity = 8 * 8 * 8,
 		clust_num_ores = 16,
 		clust_size     = 10,
@@ -360,7 +421,7 @@ core.register_ore({
 core.register_ore({
 		ore_type       = "scatter",
 		ore            = "amber:root_wall",
-		wherein        = "default:dirt",
+		wherein        = xcompat.materials.dirt,
 		clust_scarcity = 16 * 16 * 16,
 		clust_num_ores = 12,
 		clust_size     = 8,

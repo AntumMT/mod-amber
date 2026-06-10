@@ -13,13 +13,15 @@ Amber can also be crafted into armor if you have 3d_armor mod.
 
 ## Dependencies
 
-Required: none
+Required:
+
+- [default](https://github.com/minetest-game/default)
+- [xcompat](https://content.luanti.org/modnames/xcompat/)
 
 Optional:
 
 - [3d_armor](https://content.luanti.org/modnames/3d_armor/)
 - [darkage](https://content.luanti.org/modnames/darkage/)
-- [default](https://github.com/minetest-game/default)
 - [moreblocks]
 - [stairsplus][moreblocks]
 - [toolranks](https://content.luanti.org/modnames/toolranks/)
@@ -37,7 +39,7 @@ Optional:
 
 ## TODO
 
-- use [xcompat](https://content.luanti.org/modnames/xcompat/)
+- finish replacing `default` with `xcompat` or other
 
 
 [Luanti]: https://www.luanti.org/
