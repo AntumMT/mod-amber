@@ -150,6 +150,14 @@ minetest.register_ore({
 		clust_size      = 15,
 		y_min           = -64,
 		y_max           = -32,
+		noise_params = {
+			offset = 0,
+			scale = 1,
+			spread = {x=100, y=100, z=100},
+			seed = 23,
+			octaves = 3,
+			persistence = 0.7
+		}
 	})
 
 minetest.register_ore({
@@ -160,6 +168,14 @@ minetest.register_ore({
 		clust_size      = 25,
 		y_min           = -64,
 		y_max           = -32,
+		noise_params = {
+			offset = 0,
+			scale = 1,
+			spread = {x=100, y=100, z=100},
+			seed = 23,
+			octaves = 3,
+			persistence = 0.7
+		}
 	})
 
 	minetest.register_ore({
@@ -170,6 +186,14 @@ minetest.register_ore({
 			clust_size      = 10,
 			y_min           = -64,
 			y_max           = -32,
+			noise_params = {
+				offset = 0,
+				scale = 1,
+				spread = {x=100, y=100, z=100},
+				seed = 23,
+				octaves = 3,
+				persistence = 0.7
+			}
 		})
 
 	minetest.register_ore({
