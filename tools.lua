@@ -1,6 +1,8 @@
 -- Tools --
 -- Descriptions --
 
+local default_available = core.global_exists("default")
+
 tooltypes = {
 			"Pickaxe",
 			"Shovel",
@@ -29,7 +31,7 @@ core.register_tool("amber:pickaxe", {
 		},
 		damage_groups = {fleshy=4},
 	},
-	sound = {breaks = "default_tool_breaks"},
+	sound = default_available and {breaks = "default_tool_breaks"} or nil
 })
 
 -- Shovel --
@@ -46,7 +48,7 @@ core.register_tool("amber:shovel", {
 		},
 		damage_groups = {fleshy=3},
 	},
-	sound = {breaks = "default_tool_breaks"},
+	sound = default_available and {breaks = "default_tool_breaks"} or nil
 })
 
 -- Axe --
@@ -62,7 +64,7 @@ core.register_tool("amber:axe", {
 		},
 		damage_groups = {fleshy=4},
 	},
-	sound = {breaks = "default_tool_breaks"},
+	sound = default_available and {breaks = "default_tool_breaks"} or nil
 })
 
 -- Sword --
@@ -78,7 +80,7 @@ core.register_tool("amber:sword", {
 		},
 		damage_groups = {fleshy=6},
 	},
-	sound = {breaks = "default_tool_breaks"},
+	sound = default_available and {breaks = "default_tool_breaks"} or nil
 })
 -- Toolranks Support --
 if core.get_modpath("toolranks") then
@@ -105,7 +107,7 @@ core.register_tool("amber:pickaxe_ancient", {
 		},
 		damage_groups = {fleshy=4},
 	},
-	sound = {breaks = "default_tool_breaks"},
+	sound = default_available and {breaks = "default_tool_breaks"} or nil
 })
 
 -- Shovel --
@@ -122,7 +124,7 @@ core.register_tool("amber:shovel_ancient", {
 		},
 		damage_groups = {fleshy=3},
 	},
-	sound = {breaks = "default_tool_breaks"},
+	sound = default_available and {breaks = "default_tool_breaks"} or nil
 })
 
 -- Axe --
@@ -138,7 +140,7 @@ core.register_tool("amber:axe_ancient", {
 		},
 		damage_groups = {fleshy=4},
 	},
-	sound = {breaks = "default_tool_breaks"},
+	sound = default_available and {breaks = "default_tool_breaks"} or nil
 })
 
 -- Sword --
@@ -155,7 +157,7 @@ core.register_tool("amber:sword_ancient", {
 		},
 		damage_groups = {fleshy=6},
 	},
-	sound = {breaks = "default_tool_breaks"},
+	sound = default_available and {breaks = "default_tool_breaks"} or nil
 })
 
 -- Toolranks Support --

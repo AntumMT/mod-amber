@@ -1,6 +1,8 @@
 -- Crafts --
 -- Tools --
 
+local default_available = core.global_exists("default")
+
 core.register_craft({
 	output = 'amber:pickaxe',
 	recipe = {
@@ -66,14 +68,16 @@ core.register_craft({
 	}
 })
 
-core.register_craft({
-	output = 'amber:glass_medieval 4',
-	recipe = {
-		{'default:steel_ingot', 'amber:glass_tile', 'default:steel_ingot'},
-		{'amber:glass_tile', '', 'amber:glass_tile'},
-		{'default:steel_ingot', 'amber:glass_tile', 'default:steel_ingot'},
-	}
-})
+if default_available then
+	core.register_craft({
+		output = 'amber:glass_medieval 4',
+		recipe = {
+			{'default:steel_ingot', 'amber:glass_tile', 'default:steel_ingot'},
+			{'amber:glass_tile', '', 'amber:glass_tile'},
+			{'default:steel_ingot', 'amber:glass_tile', 'default:steel_ingot'},
+		}
+	})
+end
 
 -- Decorative Hieroglyphs --
 
@@ -124,19 +128,21 @@ core.register_craft({
 
 -- Root System --
 
-core.register_craft({
-	output = 'default:wood 2',
-	recipe = {
-		{'amber:tree_all'},
-	}
-})
+if default_available then
+	core.register_craft({
+		output = 'default:wood 2',
+		recipe = {
+			{'amber:tree_all'},
+		}
+	})
 
-core.register_craft({
-	output = 'amber:ambertree_green',
-	recipe = {
-		{'amber:tree_all', 'amber:green_crystals'},
-	}
-})
+	core.register_craft({
+		output = 'amber:ambertree_green',
+		recipe = {
+			{'amber:tree_all', 'amber:green_crystals'},
+		}
+	})
+end
 
 -- Craftitems --
 
@@ -147,12 +153,14 @@ core.register_craft({
 	}
 })
 
-core.register_craft({
-	output = 'default:stick',
-	recipe = {
-		{'amber:root'},
-	}
-})
+if default_available then
+	core.register_craft({
+		output = 'default:stick',
+		recipe = {
+			{'amber:root'},
+		}
+	})
+end
 
 -- Cooking --
 

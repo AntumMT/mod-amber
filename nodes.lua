@@ -4,13 +4,18 @@
 -- Sediments --
 -- Dirt --
 
-core.register_node("amber:dirt", {
-	description = "Dirt With Amber",
-	tiles = {"default_dirt.png^amber_sediment.png"},
-	groups = {crumbly = 3, soil = 1},
-	drop = "amber:amber",
-	sounds = default.node_sound_glass_defaults(),
-})
+local default_available = core.global_exists("default")
+
+if default_available then
+	core.register_node("amber:dirt", {
+		description = "Dirt With Amber",
+		tiles = {"default_dirt.png^amber_sediment.png"},
+		groups = {crumbly = 3, soil = 1},
+		drop = "amber:amber",
+		sounds = default.node_sound_glass_defaults(),
+	})
+end
+
 if core.get_modpath("darkage") then
 core.register_node("amber:mud", {
 	description = "Mud With Amber",
@@ -18,9 +23,7 @@ core.register_node("amber:mud", {
 	is_ground_content = true,
 	groups = {crumbly=3},
 	drop = "amber:amber",
-	sounds = default.node_sound_dirt_defaults({
-		footstep = "",
-	}),
+	sounds = default_available and default.node_sound_dirt_defaults({footstep=""}) or nil
 })
 end
 
@@ -50,7 +53,7 @@ core.register_node("amber:lamp", {
 		        core.get_node_timer(pos):start(0.1) -- set timer to every 1 second
 		    end,
 		groups = {cracky = 3, oddly_breakable_by_hand = 3},
-		sounds = default.node_sound_glass_defaults(),
+		sounds = default_available and default.node_sound_glass_defaults() or nil
 })
 
 light_it_up = function(pos)
@@ -81,97 +84,99 @@ core.add_particle({
 end
 end
 
--- Tree Trunks --
-core.register_node("amber:ambertree", {
-	description = "Tree With Amber",
-	tiles = {"(default_tree_top.png^[colorize:#80800099)^amber_ore_top.png", "(default_tree_top.png^[colorize:#80800099)^amber_ore_top.png",
-		"(default_tree.png^[colorize:#80800099)^amber_ore.png"},
-	paramtype2 = "facedir",
-  drop = 'amber:amber_lump 2',
-	is_ground_content = false,
-	groups = {tree = 1, choppy = 2, oddly_breakable_by_hand = 1, flammable = 2, not_in_creative_inventory = 1},
-	sounds = default.node_sound_glass_defaults(),
+if default_available then
+	-- Tree Trunks --
+	core.register_node("amber:ambertree", {
+		description = "Tree With Amber",
+		tiles = {"(default_tree_top.png^[colorize:#80800099)^amber_ore_top.png", "(default_tree_top.png^[colorize:#80800099)^amber_ore_top.png",
+			"(default_tree.png^[colorize:#80800099)^amber_ore.png"},
+		paramtype2 = "facedir",
+		drop = 'amber:amber_lump 2',
+		is_ground_content = false,
+		groups = {tree = 1, choppy = 2, oddly_breakable_by_hand = 1, flammable = 2, not_in_creative_inventory = 1},
+		sounds = default.node_sound_glass_defaults(),
 
-	on_place = core.rotate_node
-})
+		on_place = core.rotate_node
+	})
 
-core.register_node("amber:ambertree_small", {
-	description = "Tree With Amber",
-	tiles = {"default_tree_top.png^[colorize:#80800050", "default_tree_top.png^[colorize:#80800050",
-   "(default_tree.png^[colorize:#80800050)^amber_ore_small.png"},
-	paramtype2 = "facedir",
-  drop = 'amber:amber_lump',
-	is_ground_content = false,
-	groups = {tree = 1, choppy = 2, oddly_breakable_by_hand = 1, flammable = 2, not_in_creative_inventory = 1},
-	sounds = default.node_sound_glass_defaults(),
+	core.register_node("amber:ambertree_small", {
+		description = "Tree With Amber",
+		tiles = {"default_tree_top.png^[colorize:#80800050", "default_tree_top.png^[colorize:#80800050",
+		 "(default_tree.png^[colorize:#80800050)^amber_ore_small.png"},
+		paramtype2 = "facedir",
+		drop = 'amber:amber_lump',
+		is_ground_content = false,
+		groups = {tree = 1, choppy = 2, oddly_breakable_by_hand = 1, flammable = 2, not_in_creative_inventory = 1},
+		sounds = default.node_sound_glass_defaults(),
 
-	on_place = core.rotate_node
-})
+		on_place = core.rotate_node
+	})
 
-core.register_node("amber:ambertree_pine", {
-	description = "Pine Tree With Amber",
-	tiles = {"(default_pine_tree_top.png^[colorize:#80800099)^amber_ore_top.png", "(default_pine_tree_top.png^[colorize:#80800099)^amber_ore_top.png",
-		"(default_pine_tree.png^[colorize:#80800099)^amber_ore.png"},
-	paramtype2 = "facedir",
-  drop = 'amber:amber_lump 2',
-	is_ground_content = false,
-	groups = {tree = 1, choppy = 3, oddly_breakable_by_hand = 1, flammable = 3, not_in_creative_inventory = 1},
-	sounds = default.node_sound_glass_defaults(),
+	core.register_node("amber:ambertree_pine", {
+		description = "Pine Tree With Amber",
+		tiles = {"(default_pine_tree_top.png^[colorize:#80800099)^amber_ore_top.png", "(default_pine_tree_top.png^[colorize:#80800099)^amber_ore_top.png",
+			"(default_pine_tree.png^[colorize:#80800099)^amber_ore.png"},
+		paramtype2 = "facedir",
+		drop = 'amber:amber_lump 2',
+		is_ground_content = false,
+		groups = {tree = 1, choppy = 3, oddly_breakable_by_hand = 1, flammable = 3, not_in_creative_inventory = 1},
+		sounds = default.node_sound_glass_defaults(),
 
-	on_place = core.rotate_node
-})
+		on_place = core.rotate_node
+	})
 
-core.register_node("amber:ambertree_pine_small", {
-	description = "Tree With Amber",
-	tiles = {"default_pine_tree_top.png^[colorize:#80800050", "default_pine_tree_top.png^[colorize:#80800050",
-   "(default_pine_tree.png^[colorize:#80800050)^amber_ore_small.png"},
-	paramtype2 = "facedir",
-  drop = 'amber:amber_lump',
-	is_ground_content = false,
-	groups = {tree = 1, choppy = 3, oddly_breakable_by_hand = 1, flammable = 3, not_in_creative_inventory = 1},
-	sounds = default.node_sound_glass_defaults(),
+	core.register_node("amber:ambertree_pine_small", {
+		description = "Tree With Amber",
+		tiles = {"default_pine_tree_top.png^[colorize:#80800050", "default_pine_tree_top.png^[colorize:#80800050",
+		 "(default_pine_tree.png^[colorize:#80800050)^amber_ore_small.png"},
+		paramtype2 = "facedir",
+		drop = 'amber:amber_lump',
+		is_ground_content = false,
+		groups = {tree = 1, choppy = 3, oddly_breakable_by_hand = 1, flammable = 3, not_in_creative_inventory = 1},
+		sounds = default.node_sound_glass_defaults(),
 
-	on_place = core.rotate_node
-})
+		on_place = core.rotate_node
+	})
 
--- Root Amber Trees --
+	-- Root Amber Trees --
 
-core.register_node("amber:ambertree_root", {
-	description = "Tree With Amber",
-	tiles = {"((default_tree.png^[colorize:#80800099)^amber_ore.png)^amber_root.png"},
-	paramtype2 = "facedir",
-  drop = 'amber:amber_lump 2',
-	is_ground_content = false,
-	groups = {tree = 1, choppy = 2, oddly_breakable_by_hand = 1, flammable = 2, not_in_creative_inventory = 1},
-	sounds = default.node_sound_glass_defaults(),
+	core.register_node("amber:ambertree_root", {
+		description = "Tree With Amber",
+		tiles = {"((default_tree.png^[colorize:#80800099)^amber_ore.png)^amber_root.png"},
+		paramtype2 = "facedir",
+		drop = 'amber:amber_lump 2',
+		is_ground_content = false,
+		groups = {tree = 1, choppy = 2, oddly_breakable_by_hand = 1, flammable = 2, not_in_creative_inventory = 1},
+		sounds = default.node_sound_glass_defaults(),
 
-	on_place = core.rotate_node
-})
+		on_place = core.rotate_node
+	})
 
-core.register_node("amber:ambertree_root_small", {
-	description = "Tree With Amber",
-	tiles = {"((default_tree.png^[colorize:#80800050)^amber_ore_small.png)^amber_root.png"},
-	paramtype2 = "facedir",
-  drop = 'amber:amber_lump',
-	is_ground_content = false,
-	groups = {tree = 1, choppy = 2, oddly_breakable_by_hand = 1, flammable = 2, not_in_creative_inventory = 1},
-	sounds = default.node_sound_glass_defaults(),
+	core.register_node("amber:ambertree_root_small", {
+		description = "Tree With Amber",
+		tiles = {"((default_tree.png^[colorize:#80800050)^amber_ore_small.png)^amber_root.png"},
+		paramtype2 = "facedir",
+		drop = 'amber:amber_lump',
+		is_ground_content = false,
+		groups = {tree = 1, choppy = 2, oddly_breakable_by_hand = 1, flammable = 2, not_in_creative_inventory = 1},
+		sounds = default.node_sound_glass_defaults(),
 
-	on_place = core.rotate_node
-})
+		on_place = core.rotate_node
+	})
 
-core.register_node("amber:ambertree_green", {
-	description = "Tree With Green Sediments",
-	tiles = {"((default_tree.png^[colorize:#00800025)^amber_green_sediment.png)^amber_root.png"},
-	paramtype2 = "facedir",
-  drop = 'amber:green_crystals',
-	light_source = 8,
-	is_ground_content = false,
-	groups = {tree = 1, choppy = 2, oddly_breakable_by_hand = 1, flammable = 2},
-	sounds = default.node_sound_glass_defaults(),
+	core.register_node("amber:ambertree_green", {
+		description = "Tree With Green Sediments",
+		tiles = {"((default_tree.png^[colorize:#00800025)^amber_green_sediment.png)^amber_root.png"},
+		paramtype2 = "facedir",
+		drop = 'amber:green_crystals',
+		light_source = 8,
+		is_ground_content = false,
+		groups = {tree = 1, choppy = 2, oddly_breakable_by_hand = 1, flammable = 2},
+		sounds = default.node_sound_glass_defaults(),
 
-	on_place = core.rotate_node
-})
+		on_place = core.rotate_node
+	})
+end
 
 -- Decorations --
 
@@ -180,7 +185,7 @@ core.register_node("amber:bricks", {
 	tiles = {"amber_bricks.png"},
 	is_ground_content = false,
 	groups = {cracky = 3, oddly_breakable_by_hand = 3},
-	sounds = default.node_sound_glass_defaults(),
+	sounds = default_available and default.node_sound_glass_defaults() or nil
 })
 
 core.register_node("amber:bricks_scarab", {
@@ -190,7 +195,7 @@ core.register_node("amber:bricks_scarab", {
 	light_source = 6,
 	paramtype2 = "facedir",
 	groups = {cracky = 3, oddly_breakable_by_hand = 3},
-	sounds = default.node_sound_glass_defaults(),
+	sounds = default_available and default.node_sound_glass_defaults() or nil
 })
 
 core.register_node("amber:block", {
@@ -198,7 +203,7 @@ core.register_node("amber:block", {
 	tiles = {"amber_block.png"},
 	is_ground_content = false,
 	groups = {cracky = 3, oddly_breakable_by_hand = 3},
-	sounds = default.node_sound_glass_defaults(),
+	sounds = default_available and default.node_sound_glass_defaults() or nil
 })
 
 core.register_node("amber:block_eye", {
@@ -208,7 +213,7 @@ core.register_node("amber:block_eye", {
 	light_source = 6,
 	paramtype2 = "facedir",
 	groups = {cracky = 3, oddly_breakable_by_hand = 3},
-	sounds = default.node_sound_glass_defaults(),
+	sounds = default_available and default.node_sound_glass_defaults() or nil
 })
 
 core.register_node("amber:block_frame", {
@@ -218,7 +223,7 @@ core.register_node("amber:block_frame", {
 	light_source = 4,
 	paramtype2 = "facedir",
 	groups = {cracky = 3, oddly_breakable_by_hand = 3},
-	sounds = default.node_sound_glass_defaults(),
+	sounds = default_available and default.node_sound_glass_defaults() or nil
 })
 
 core.register_node("amber:block_sun_edge", {
@@ -228,7 +233,7 @@ core.register_node("amber:block_sun_edge", {
 	light_source = 6,
 	paramtype2 = "facedir",
 	groups = {cracky = 3, oddly_breakable_by_hand = 3},
-	sounds = default.node_sound_glass_defaults(),
+	sounds = default_available and default.node_sound_glass_defaults() or nil
 })
 
 core.register_node("amber:block_sun", {
@@ -238,7 +243,7 @@ core.register_node("amber:block_sun", {
 	light_source = 12,
 	paramtype2 = "facedir",
 	groups = {cracky = 3, oddly_breakable_by_hand = 3},
-	sounds = default.node_sound_glass_defaults(),
+	sounds = default_available and default.node_sound_glass_defaults() or nil
 })
 
 if core.get_modpath("moreblocks") then
@@ -246,14 +251,14 @@ stairsplus:register_all("amber", "bricks", "amber:bricks", {
 	description = "Amber Brick",
 	tiles = {"amber_bricks.png"},
 	groups = {cracky = 3, oddly_breakable_by_hand = 3},
-	sounds = default.node_sound_glass_defaults(),
+	sounds = default_available and default.node_sound_glass_defaults() or nil
 })
 
 stairsplus:register_all("amber", "block", "amber:block", {
 	description = "Amber Block",
 	tiles = {"amber_block.png"},
 	groups = {cracky = 3, oddly_breakable_by_hand = 3},
-	sounds = default.node_sound_glass_defaults(),
+	sounds = default_available and default.node_sound_glass_defaults() or nil
 })
 end
 
@@ -266,7 +271,7 @@ core.register_node("amber:glass", {
 	sunlight_propagates = true,
 	is_ground_content = false,
 	groups = {cracky = 3, oddly_breakable_by_hand = 3},
-	sounds = default.node_sound_glass_defaults(),
+	sounds = default_available and default.node_sound_glass_defaults() or nil
 })
 
 core.register_node("amber:glass_medieval", {
@@ -278,7 +283,7 @@ core.register_node("amber:glass_medieval", {
 	sunlight_propagates = true,
 	is_ground_content = false,
 	groups = {cracky = 3, oddly_breakable_by_hand = 3},
-	sounds = default.node_sound_glass_defaults(),
+	sounds = default_available and default.node_sound_glass_defaults() or nil
 })
 
 -- Root System Nodes --
@@ -289,7 +294,7 @@ core.register_node("amber:root_wall", {
 	tiles = {"amber_root_wall.png^amber_root.png"},
 	is_ground_content = true,
 	groups = {tree = 1, choppy = 2, oddly_breakable_by_hand = 1, flammable = 2},
-	sounds = default.node_sound_wood_defaults(),
+	sounds = default_available and default.node_sound_wood_defaults() or nil
 })
 
 core.register_node("amber:root_wall_light", {
@@ -300,16 +305,18 @@ core.register_node("amber:root_wall_light", {
 	light_source = 8,
 	drop = 'amber:green_crystals 3',
 	groups = {tree = 1, choppy = 2, oddly_breakable_by_hand = 1, flammable = 2},
-	sounds = default.node_sound_glass_defaults(),
+	sounds = default_available and default.node_sound_glass_defaults() or nil
 })
 
-core.register_node("amber:tree_all", {
-	description = "Tree",
-	tiles = {"default_tree.png^(amber_root.png^[transformR90)"},
-	is_ground_content = false,
-	groups = {tree = 1, choppy = 2, oddly_breakable_by_hand = 1, flammable = 2},
-	sounds = default.node_sound_wood_defaults(),
-})
+if default_available then
+	core.register_node("amber:tree_all", {
+		description = "Tree",
+		tiles = {"default_tree.png^(amber_root.png^[transformR90)"},
+		is_ground_content = false,
+		groups = {tree = 1, choppy = 2, oddly_breakable_by_hand = 1, flammable = 2},
+		sounds = default.node_sound_wood_defaults(),
+	})
+end
 
 -- Root System Vegetation --
 
@@ -337,7 +344,7 @@ core.register_node("amber:root", {
 	pointable = false,
 	buildable_to = true,
 	groups = {snappy = 3, flammable = 3},
-	sounds = default.node_sound_wood_defaults(),
+	sounds = default_available and default.node_sound_wood_defaults() or nil,
 	selection_box = {
 		type = "fixed",
 		fixed = {-1, -1, -1, 1, 1, 1},
@@ -428,6 +435,6 @@ core.register_node("amber:matrix_" .. types[i]:lower(), {
 	},
 	is_ground_content = false,
 	groups = {cracky = 3, oddly_breakable_by_hand = 3},
-	sounds = default.node_sound_glass_defaults()
+	sounds = default_available and default.node_sound_glass_defaults() or nil
 })
 end
