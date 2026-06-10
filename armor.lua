@@ -1,7 +1,4 @@
 -- Armors --
-
-local default_available = core.global_exists("default")
-
 armor:register_armor("amber:helmet", {
   		description = "Amber Helmet",
   		inventory_image = "amber_inv_helmet_amber.png",
@@ -84,13 +81,9 @@ armor:register_armor("amber:helmet_ancient", {
 		damage_groups = {cracky=1, snappy=1, choppy=1, crumbly=1, level=3},
 		reciprocate_damage = true,
 		on_damage = function(player, index, stack)
-			if default_available then
-				core.sound_play({name="default_dig_glass", object=player})
-			end
+			core.sound_play({name="default_dig_glass", object=player})
 		end,
 		on_destroy = function(player, index, stack)
-			if default_available then
-				core.sound_play({name="default_dug_glass", object=player})
-			end
+			core.sound_play({name="default_dug_glass", object=player})
 		end,
 })

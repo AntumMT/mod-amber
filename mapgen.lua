@@ -1,20 +1,16 @@
 -- Oregen --
 -- Sediments --
 
-local default_available = core.global_exists("default")
-
-if default_available then
-	core.register_ore({
-			ore_type       = "scatter",
-			ore            = "amber:dirt",
-			wherein        = "default:dirt",
-			clust_scarcity = 12 * 12 * 12,
-			clust_num_ores = 9,
-			clust_size     = 3,
-			y_min          = -1024,
-			y_max          = 31000,
-	})
-end
+core.register_ore({
+		ore_type       = "scatter",
+		ore            = "amber:dirt",
+		wherein        = "default:dirt",
+		clust_scarcity = 12 * 12 * 12,
+		clust_num_ores = 9,
+		clust_size     = 3,
+		y_min          = -1024,
+		y_max          = 31000,
+})
 
 if core.get_modpath("darkage") then
 core.register_ore({
@@ -34,7 +30,7 @@ for i=1,n do
 core.register_ore({
 		ore_type       = "scatter",
 		ore            = "amber:matrix_" .. types[i]:lower(),
-		wherein        = "group:stone",
+		wherein        = "default:stone",
 		clust_scarcity = 75 * 75 * 75,
 		clust_num_ores = 1,
 		clust_size     = 25,
@@ -44,114 +40,112 @@ core.register_ore({
 end
 -- Schematics --
 
-if default_available then
-	core.register_decoration({
-			deco_type = "schematic",
-			place_on = {"default:dirt_with_grass"},
-			sidelen = 8,
-			fill_ratio = 0.0001,
-			biomes = {"deciduous_forest"},
-			y_min = 1,
-			y_max = 31000,
-			schematic = core.get_modpath("amber") .. "/schematics/amber_trunk1.mts",
-			flags = "place_center_x, place_center_z, place_center_y = false",
-			rotation = "random",
-		})
-
-	core.register_decoration({
-			deco_type = "schematic",
-			place_on = {"default:dirt_with_grass"},
-			sidelen = 8,
-			fill_ratio = 0.00005,
-			biomes = {"deciduous_forest"},
-			y_min = 1,
-			y_max = 31000,
-			schematic = core.get_modpath("amber") .. "/schematics/amber_trunk2.mts",
-			flags = "place_center_x, place_center_z, place_center_y = false",
-			rotation = "random",
-		})
-
-	core.register_decoration({
-			deco_type = "schematic",
-			place_on = {"default:dirt_with_grass"},
-			sidelen = 8,
-			fill_ratio = 0.00005,
-			biomes = {"deciduous_forest"},
-			y_min = 1,
-			y_max = 31000,
-			schematic = core.get_modpath("amber") .. "/schematics/amber_trunk3.mts",
-			flags = "place_center_x, place_center_z, place_center_y = false",
-			rotation = "random",
-		})
-
-	core.register_decoration({
-			deco_type = "schematic",
-			place_on = {"default:dirt_with_grass"},
-			sidelen = 8,
-			fill_ratio = 0.00001,
-			biomes = {"deciduous_forest"},
-			y_min = 1,
-			y_max = 31000,
-			schematic = core.get_modpath("amber") .. "/schematics/amber_trunk4.mts",
-			flags = "place_center_x, place_center_z, place_center_y = false",
-			rotation = "random",
-		})
-
-	core.register_decoration({
-			deco_type = "schematic",
-			place_on = {"default:dirt_with_snow", "default:dirt_with_grass"},
-			sidelen = 8,
-			fill_ratio = 0.0001,
-			biomes = {"taiga", "coniferous_forest", "floatland_coniferous_forest"},
-			y_min = 2,
-			y_max = 31000,
-			schematic = core.get_modpath("amber") .. "/schematics/amber_pine_trunk1.mts",
-			flags = "place_center_x, place_center_z, place_center_y = false",
+core.register_decoration({
+		deco_type = "schematic",
+		place_on = {"default:dirt_with_grass"},
+		sidelen = 8,
+    fill_ratio = 0.0001,
+		biomes = {"deciduous_forest"},
+		y_min = 1,
+		y_max = 31000,
+		schematic = core.get_modpath("amber") .. "/schematics/amber_trunk1.mts",
+		flags = "place_center_x, place_center_z, place_center_y = false",
+		rotation = "random",
 	})
 
-	core.register_decoration({
-			deco_type = "schematic",
-			place_on = {"default:dirt_with_snow", "default:dirt_with_grass"},
-			sidelen = 8,
-			fill_ratio = 0.00005,
-			biomes = {"taiga", "coniferous_forest", "floatland_coniferous_forest"},
-			y_min = 2,
-			y_max = 31000,
-			schematic = core.get_modpath("amber") .. "/schematics/amber_pine_trunk2.mts",
-			flags = "place_center_x, place_center_z, place_center_y = false",
-	})
+  core.register_decoration({
+  		deco_type = "schematic",
+  		place_on = {"default:dirt_with_grass"},
+  		sidelen = 8,
+      fill_ratio = 0.00005,
+  		biomes = {"deciduous_forest"},
+  		y_min = 1,
+  		y_max = 31000,
+  		schematic = core.get_modpath("amber") .. "/schematics/amber_trunk2.mts",
+  		flags = "place_center_x, place_center_z, place_center_y = false",
+  		rotation = "random",
+  	})
 
-	core.register_decoration({
-			deco_type = "schematic",
-			place_on = {"default:dirt_with_snow", "default:dirt_with_grass"},
-			sidelen = 8,
-			fill_ratio = 0.00005,
-			biomes = {"taiga", "coniferous_forest", "floatland_coniferous_forest"},
-			y_min = 2,
-			y_max = 31000,
-			schematic = core.get_modpath("amber") .. "/schematics/amber_pine_trunk3.mts",
-			flags = "place_center_x, place_center_z, place_center_y = false",
-	})
+    core.register_decoration({
+    		deco_type = "schematic",
+    		place_on = {"default:dirt_with_grass"},
+    		sidelen = 8,
+        fill_ratio = 0.00005,
+    		biomes = {"deciduous_forest"},
+    		y_min = 1,
+    		y_max = 31000,
+    		schematic = core.get_modpath("amber") .. "/schematics/amber_trunk3.mts",
+    		flags = "place_center_x, place_center_z, place_center_y = false",
+    		rotation = "random",
+    	})
 
-	core.register_decoration({
-			deco_type = "schematic",
-			place_on = {"default:dirt_with_snow", "default:dirt_with_grass"},
-			sidelen = 8,
-			fill_ratio = 0.00001,
-			biomes = {"taiga", "coniferous_forest", "floatland_coniferous_forest"},
-			y_min = 2,
-			y_max = 31000,
-			schematic = core.get_modpath("amber") .. "/schematics/amber_pine_trunk4.mts",
-			flags = "place_center_x, place_center_z, place_center_y = false",
-	})
-end
+      core.register_decoration({
+      		deco_type = "schematic",
+      		place_on = {"default:dirt_with_grass"},
+      		sidelen = 8,
+          fill_ratio = 0.00001,
+      		biomes = {"deciduous_forest"},
+      		y_min = 1,
+      		y_max = 31000,
+      		schematic = core.get_modpath("amber") .. "/schematics/amber_trunk4.mts",
+      		flags = "place_center_x, place_center_z, place_center_y = false",
+      		rotation = "random",
+      	})
+
+core.register_decoration({
+		deco_type = "schematic",
+		place_on = {"default:dirt_with_snow", "default:dirt_with_grass"},
+		sidelen = 8,
+    fill_ratio = 0.0001,
+		biomes = {"taiga", "coniferous_forest", "floatland_coniferous_forest"},
+		y_min = 2,
+		y_max = 31000,
+		schematic = core.get_modpath("amber") .. "/schematics/amber_pine_trunk1.mts",
+		flags = "place_center_x, place_center_z, place_center_y = false",
+})
+
+core.register_decoration({
+		deco_type = "schematic",
+		place_on = {"default:dirt_with_snow", "default:dirt_with_grass"},
+		sidelen = 8,
+    fill_ratio = 0.00005,
+		biomes = {"taiga", "coniferous_forest", "floatland_coniferous_forest"},
+		y_min = 2,
+		y_max = 31000,
+		schematic = core.get_modpath("amber") .. "/schematics/amber_pine_trunk2.mts",
+		flags = "place_center_x, place_center_z, place_center_y = false",
+})
+
+core.register_decoration({
+		deco_type = "schematic",
+		place_on = {"default:dirt_with_snow", "default:dirt_with_grass"},
+		sidelen = 8,
+    fill_ratio = 0.00005,
+		biomes = {"taiga", "coniferous_forest", "floatland_coniferous_forest"},
+		y_min = 2,
+		y_max = 31000,
+		schematic = core.get_modpath("amber") .. "/schematics/amber_pine_trunk3.mts",
+		flags = "place_center_x, place_center_z, place_center_y = false",
+})
+
+core.register_decoration({
+		deco_type = "schematic",
+		place_on = {"default:dirt_with_snow", "default:dirt_with_grass"},
+		sidelen = 8,
+    fill_ratio = 0.00001,
+		biomes = {"taiga", "coniferous_forest", "floatland_coniferous_forest"},
+		y_min = 2,
+		y_max = 31000,
+		schematic = core.get_modpath("amber") .. "/schematics/amber_pine_trunk4.mts",
+		flags = "place_center_x, place_center_z, place_center_y = false",
+})
 
 -- Root System --
 
 core.register_ore({
 		ore_type        = "blob",
 		ore             = "air",
-		wherein         = {"group:stone", "default:stone_with_coal", "default:stone_with_iron", "default:stone_with_copper", "default:stone_with_tin", "default:gravel", "group:sand"},
+		wherein         = {"default:stone", "default:stone_with_coal", "default:stone_with_iron", "default:stone_with_copper", "default:stone_with_tin", "default:gravel", "default:sand", "default:silver_sand"},
 		clust_scarcity  = 16 * 16 * 16,
 		clust_size      = 15,
 		y_min           = -64,
@@ -169,7 +163,7 @@ core.register_ore({
 core.register_ore({
 		ore_type        = "blob",
 		ore             = "amber:root_wall",
-		wherein         = {"group:stone", "default:stone_with_coal", "default:stone_with_iron", "default:stone_with_copper", "default:stone_with_tin", "default:gravel", "group:sand"},
+		wherein         = {"default:stone", "default:stone_with_coal", "default:stone_with_iron", "default:stone_with_copper", "default:stone_with_tin", "default:gravel", "default:sand", "default:silver_sand"},
 		clust_scarcity  = 8 * 6 * 8,
 		clust_size      = 25,
 		y_min           = -64,
@@ -187,7 +181,7 @@ core.register_ore({
 	core.register_ore({
 			ore_type        = "blob",
 			ore             = "amber:root_wall",
-			wherein         = {"group:stone", "default:stone_with_coal", "default:stone_with_iron", "default:stone_with_copper", "default:stone_with_tin", "default:gravel", "group:sand"},
+			wherein         = {"default:stone", "default:stone_with_coal", "default:stone_with_iron", "default:stone_with_copper", "default:stone_with_tin", "default:gravel", "default:sand", "default:silver_sand"},
 			clust_scarcity  = 3 * 2 * 3,
 			clust_size      = 10,
 			y_min           = -64,
@@ -205,7 +199,7 @@ core.register_ore({
 	core.register_ore({
 			ore_type       = "scatter",
 			ore            = "air",
-			wherein        = {"amber:root_wall", "group:stone", "default:stone_with_coal", "default:stone_with_iron", "default:stone_with_copper", "default:stone_with_tin", "default:gravel", "group:sand"},
+			wherein        = {"amber:root_wall", "default:stone", "default:stone_with_coal", "default:stone_with_iron", "default:stone_with_copper", "default:stone_with_tin", "default:gravel", "default:sand", "default:silver_sand"},
 			clust_scarcity = 3 * 4 * 3,
 			clust_num_ores = 32,
 			clust_size     = 18,
@@ -216,30 +210,28 @@ core.register_ore({
 
 -- Root system Decorations --
 -- Roots --
-if default_available then
-	core.register_ore({
-			ore_type        = "blob",
-			ore             = "amber:tree_all",
-			wherein         = {"default:water_source", "air", "amber:root_wall", "group:stone", "default:stone_with_coal", "default:stone_with_iron", "default:stone_with_copper", "default:stone_with_tin", "default:gravel", "group:sand"},
-			clust_scarcity  = 10 * 2 * 10,
-			clust_size      = 16,
-			y_min           = -72,
-			y_max           = -16,
-			noise_params    = {
-				offset = 0.0,
-				scale = 0.5,
-				spread = {x = 50, y = 100, z = 50},
-				seed = 5476,
-				octaves = 2,
-				persist = 0.0
-			},
-	})
-end
+core.register_ore({
+		ore_type        = "blob",
+		ore             = "amber:tree_all",
+		wherein         = {"default:water_source", "air", "amber:root_wall", "default:stone", "default:stone_with_coal", "default:stone_with_iron", "default:stone_with_copper", "default:stone_with_tin", "default:gravel", "default:sand", "default:silver_sand"},
+		clust_scarcity  = 10 * 2 * 10,
+		clust_size      = 16,
+		y_min           = -72,
+		y_max           = -16,
+		noise_params    = {
+			offset = 0.0,
+			scale = 0.5,
+			spread = {x = 50, y = 100, z = 50},
+			seed = 5476,
+			octaves = 2,
+			persist = 0.0
+		},
+})
 
 core.register_ore({
 		ore_type       = "scatter",
 		ore            = "amber:root_wall",
-		wherein        = {"amber:root_wall", "group:stone"},
+		wherein        = {"amber:root_wall", "default:stone"},
 		clust_scarcity = 3 * 3 * 3,
 		clust_num_ores = 12,
 		clust_size     = 6,
@@ -269,142 +261,136 @@ core.register_ore({
 		y_max          = -16,
 })
 
-if default_available then
-	core.register_ore({
-			ore_type        = "blob",
-			ore             = "amber:tree_all",
-			wherein         = {"default:water_source", "air", "amber:root_wall", "group:stone", "default:stone_with_coal", "default:stone_with_iron", "default:stone_with_copper", "default:stone_with_tin", "default:gravel", "group:sand"},
-			clust_scarcity  = 10 * 4 * 10,
-			clust_size      = 16,
-			y_min           = -72,
-			y_max           = -16,
-			noise_params    = {
-				offset = 0.0,
-				scale = 0.5,
-				spread = {x = 75, y = 75, z = 75},
-				seed = 3489,
-				octaves = 1,
-				persist = 0.0
-			},
-	})
+core.register_ore({
+		ore_type        = "blob",
+		ore             = "amber:tree_all",
+		wherein         = {"default:water_source", "air", "amber:root_wall", "default:stone", "default:stone_with_coal", "default:stone_with_iron", "default:stone_with_copper", "default:stone_with_tin", "default:gravel", "default:sand", "default:silver_sand"},
+		clust_scarcity  = 10 * 4 * 10,
+		clust_size      = 16,
+		y_min           = -72,
+		y_max           = -16,
+		noise_params    = {
+			offset = 0.0,
+			scale = 0.5,
+			spread = {x = 75, y = 75, z = 75},
+			seed = 3489,
+			octaves = 1,
+			persist = 0.0
+		},
+})
 
-	core.register_ore({
-			ore_type       = "scatter",
-			ore            = "amber:ambertree_green",
-			wherein        = {"amber:tree_all"},
-			clust_scarcity = 6 * 6 * 6,
-			clust_num_ores = 8,
-			clust_size     = 8,
-			y_min          = -64,
-			y_max          = -16,
-	})
-end
+core.register_ore({
+		ore_type       = "scatter",
+		ore            = "amber:ambertree_green",
+		wherein        = {"amber:tree_all"},
+		clust_scarcity = 6 * 6 * 6,
+		clust_num_ores = 8,
+		clust_size     = 8,
+		y_min          = -64,
+		y_max          = -16,
+})
 
 -- Dirt --
 
-if default_available then
-	core.register_ore({
-			ore_type        = "blob",
-			ore             = "default:dirt",
-			wherein         = {"amber:root_wall", "air"},
-			clust_scarcity  = 16 * 16 * 16,
-			clust_size      = 10,
-			y_min           = -68,
-			y_max           = -32,
-			noise_threshold = 0.0,
-			noise_params    = {
-				offset = 0.5,
-				scale = 0.2,
-				spread = {x = 5, y = 5, z = 5},
-				seed = 4536,
-				octaves = 1,
-				persist = 0.0
-			},
-	})
+core.register_ore({
+		ore_type        = "blob",
+		ore             = "default:dirt",
+		wherein         = {"amber:root_wall", "air"},
+		clust_scarcity  = 16 * 16 * 16,
+		clust_size      = 10,
+		y_min           = -68,
+		y_max           = -32,
+		noise_threshold = 0.0,
+		noise_params    = {
+			offset = 0.5,
+			scale = 0.2,
+			spread = {x = 5, y = 5, z = 5},
+			seed = 4536,
+			octaves = 1,
+			persist = 0.0
+		},
+})
 
-	core.register_ore({
-			ore_type       = "scatter",
-			ore            = "default:dirt",
-			wherein        = "amber:root_wall",
-			clust_scarcity = 8 * 8 * 8,
-			clust_num_ores = 16,
-			clust_size     = 10,
-			y_min          = -68,
-			y_max          = -32,
-	})
+core.register_ore({
+		ore_type       = "scatter",
+		ore            = "default:dirt",
+		wherein        = "amber:root_wall",
+		clust_scarcity = 8 * 8 * 8,
+		clust_num_ores = 16,
+		clust_size     = 10,
+		y_min          = -68,
+		y_max          = -32,
+})
 
-	core.register_ore({
-			ore_type       = "scatter",
-			ore            = "default:dirt",
-			wherein        = "amber:root_wall",
-			clust_scarcity = 16 * 16 * 16,
-			clust_num_ores = 12,
-			clust_size     = 8,
-			y_min          = -68,
-			y_max          = -32,
-	})
+core.register_ore({
+		ore_type       = "scatter",
+		ore            = "default:dirt",
+		wherein        = "amber:root_wall",
+		clust_scarcity = 16 * 16 * 16,
+		clust_num_ores = 12,
+		clust_size     = 8,
+		y_min          = -68,
+		y_max          = -32,
+})
 
-	core.register_ore({
-			ore_type       = "scatter",
-			ore            = "default:dirt",
-			wherein        = "amber:root_wall",
-			clust_scarcity = 16 * 16 * 16,
-			clust_num_ores = 12,
-			clust_size     = 8,
-			y_min          = -68,
-			y_max          = -32,
-	})
+core.register_ore({
+		ore_type       = "scatter",
+		ore            = "default:dirt",
+		wherein        = "amber:root_wall",
+		clust_scarcity = 16 * 16 * 16,
+		clust_num_ores = 12,
+		clust_size     = 8,
+		y_min          = -68,
+		y_max          = -32,
+})
 
-	-- Walls in Dirt --
+-- Walls in Dirt --
 
-	core.register_ore({
-			ore_type       = "scatter",
-			ore            = "amber:root_wall",
-			wherein        = "default:dirt",
-			clust_scarcity = 8 * 8 * 8,
-			clust_num_ores = 16,
-			clust_size     = 10,
-			y_min          = -68,
-			y_max          = -32,
-	})
+core.register_ore({
+		ore_type       = "scatter",
+		ore            = "amber:root_wall",
+		wherein        = "default:dirt",
+		clust_scarcity = 8 * 8 * 8,
+		clust_num_ores = 16,
+		clust_size     = 10,
+		y_min          = -68,
+		y_max          = -32,
+})
 
-	core.register_ore({
-			ore_type       = "scatter",
-			ore            = "amber:root_wall",
-			wherein        = "default:dirt",
-			clust_scarcity = 16 * 16 * 16,
-			clust_num_ores = 12,
-			clust_size     = 8,
-			y_min          = -68,
-			y_max          = -32,
-	})
-end
+core.register_ore({
+		ore_type       = "scatter",
+		ore            = "amber:root_wall",
+		wherein        = "default:dirt",
+		clust_scarcity = 16 * 16 * 16,
+		clust_num_ores = 12,
+		clust_size     = 8,
+		y_min          = -68,
+		y_max          = -32,
+})
 
 -- Amber ores --
 
-if default_available then
-	core.register_ore({
-			ore_type       = "scatter",
-			ore            = "amber:ambertree_root",
-			wherein        = "amber:tree_all",
-			clust_scarcity = 8 * 8 * 8,
-			clust_num_ores = 16,
-			clust_size     = 10,
-			y_min          = -64,
-			y_max          = -32,
-	})
+core.register_ore({
+		ore_type       = "scatter",
+		ore            = "amber:ambertree_root",
+		wherein        = "amber:tree_all",
+		clust_scarcity = 8 * 8 * 8,
+		clust_num_ores = 16,
+		clust_size     = 10,
+		y_min          = -64,
+		y_max          = -32,
+})
 
-	core.register_ore({
-			ore_type       = "scatter",
-			ore            = "amber:ambertree_root_small",
-			wherein        = "amber:tree_all",
-			clust_scarcity = 8 * 8 * 8,
-			clust_num_ores = 16,
-			clust_size     = 8,
-			y_min          = -64,
-			y_max          = -32,
-	})
-end
+core.register_ore({
+		ore_type       = "scatter",
+		ore            = "amber:ambertree_root_small",
+		wherein        = "amber:tree_all",
+		clust_scarcity = 8 * 8 * 8,
+		clust_num_ores = 16,
+		clust_size     = 8,
+		y_min          = -64,
+		y_max          = -32,
+})
 -- Light --
 
 core.register_ore({
