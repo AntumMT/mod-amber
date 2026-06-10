@@ -11,6 +11,19 @@ It can be crafted into tools, which support toolranks mod.
 Amber can also be used to create decorational blocks, which can be cut by circular saw from moreblocks mod.
 Amber can also be crafted into armor if you have 3d_armor mod.
 
+## Dependencies
+
+Required: none
+
+Optional:
+
+- [3d_armor](https://content.luanti.org/modnames/3d_armor/)
+- [darkage](https://content.luanti.org/modnames/darkage/)
+- [default](https://github.com/minetest-game/default)
+- [moreblocks]
+- [stairsplus][moreblocks]
+- [toolranks](https://content.luanti.org/modnames/toolranks/)
+
 ## Licensing
 
 [LGPL 2.1](LICENSE.txt) for both code &amp; media.
@@ -24,9 +37,10 @@ Amber can also be crafted into armor if you have 3d_armor mod.
 
 ## TODO
 
-- use [xcompat](https://content.luanti.org/packages/mt-mods/xcompat/)
+- use [xcompat](https://content.luanti.org/modnames/xcompat/)
 
 
 [Luanti]: https://www.luanti.org/
 [amber.orig]: https://forum.luanti.org/viewtopic.php?t=18186
 [amber.orig.git]: https://github.com/theraven262/amber
+[moreblocks]: https://content.luanti.org/modnames/moreblocks/
