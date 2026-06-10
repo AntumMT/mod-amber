@@ -11,6 +11,10 @@ It can be crafted into tools, which support toolranks mod.
 Amber can also be used to create decorational blocks, which can be cut by circular saw from moreblocks mod.
 Amber can also be crafted into armor if you have 3d_armor mod.
 
+## Licensing
+
+[LGPL 2.1](LICENSE.txt) for both code &amp; media.
+
 ## Links
 
 - Git Repo Mirros:
