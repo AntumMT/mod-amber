@@ -81,9 +81,9 @@ armor:register_armor("amber:helmet_ancient", {
 		damage_groups = {cracky=1, snappy=1, choppy=1, crumbly=1, level=3},
 		reciprocate_damage = true,
 		on_damage = function(player, index, stack)
-			play_sound_effect(player, "default_dig_glass")
+			core.sound_play({name="default_dig_glass", object=player})
 		end,
 		on_destroy = function(player, index, stack)
-			play_sound_effect(player, "default_dug_glass")
+			core.sound_play({name="default_dug_glass", object=player})
 		end,
 })
