@@ -1,7 +1,7 @@
 -- Oregen --
 -- Sediments --
 
-minetest.register_ore({
+core.register_ore({
 		ore_type       = "scatter",
 		ore            = "amber:dirt",
 		wherein        = "default:dirt",
@@ -12,8 +12,8 @@ minetest.register_ore({
 		y_max          = 31000,
 })
 
-if minetest.get_modpath("darkage") then
-minetest.register_ore({
+if core.get_modpath("darkage") then
+core.register_ore({
 		ore_type       = "scatter",
 		ore            = "amber:mud",
 		wherein        = "darkage:mud",
@@ -27,7 +27,7 @@ end
 
 -- Matrices --
 for i=1,n do
-minetest.register_ore({
+core.register_ore({
 		ore_type       = "scatter",
 		ore            = "amber:matrix_" .. types[i]:lower(),
 		wherein        = "default:stone",
@@ -40,7 +40,7 @@ minetest.register_ore({
 end
 -- Schematics --
 
-minetest.register_decoration({
+core.register_decoration({
 		deco_type = "schematic",
 		place_on = {"default:dirt_with_grass"},
 		sidelen = 8,
@@ -48,12 +48,12 @@ minetest.register_decoration({
 		biomes = {"deciduous_forest"},
 		y_min = 1,
 		y_max = 31000,
-		schematic = minetest.get_modpath("amber") .. "/schematics/amber_trunk1.mts",
+		schematic = core.get_modpath("amber") .. "/schematics/amber_trunk1.mts",
 		flags = "place_center_x, place_center_z, place_center_y = false",
 		rotation = "random",
 	})
 
-  minetest.register_decoration({
+  core.register_decoration({
   		deco_type = "schematic",
   		place_on = {"default:dirt_with_grass"},
   		sidelen = 8,
@@ -61,12 +61,12 @@ minetest.register_decoration({
   		biomes = {"deciduous_forest"},
   		y_min = 1,
   		y_max = 31000,
-  		schematic = minetest.get_modpath("amber") .. "/schematics/amber_trunk2.mts",
+  		schematic = core.get_modpath("amber") .. "/schematics/amber_trunk2.mts",
   		flags = "place_center_x, place_center_z, place_center_y = false",
   		rotation = "random",
   	})
 
-    minetest.register_decoration({
+    core.register_decoration({
     		deco_type = "schematic",
     		place_on = {"default:dirt_with_grass"},
     		sidelen = 8,
@@ -74,12 +74,12 @@ minetest.register_decoration({
     		biomes = {"deciduous_forest"},
     		y_min = 1,
     		y_max = 31000,
-    		schematic = minetest.get_modpath("amber") .. "/schematics/amber_trunk3.mts",
+    		schematic = core.get_modpath("amber") .. "/schematics/amber_trunk3.mts",
     		flags = "place_center_x, place_center_z, place_center_y = false",
     		rotation = "random",
     	})
 
-      minetest.register_decoration({
+      core.register_decoration({
       		deco_type = "schematic",
       		place_on = {"default:dirt_with_grass"},
       		sidelen = 8,
@@ -87,12 +87,12 @@ minetest.register_decoration({
       		biomes = {"deciduous_forest"},
       		y_min = 1,
       		y_max = 31000,
-      		schematic = minetest.get_modpath("amber") .. "/schematics/amber_trunk4.mts",
+      		schematic = core.get_modpath("amber") .. "/schematics/amber_trunk4.mts",
       		flags = "place_center_x, place_center_z, place_center_y = false",
       		rotation = "random",
       	})
 
-minetest.register_decoration({
+core.register_decoration({
 		deco_type = "schematic",
 		place_on = {"default:dirt_with_snow", "default:dirt_with_grass"},
 		sidelen = 8,
@@ -100,11 +100,11 @@ minetest.register_decoration({
 		biomes = {"taiga", "coniferous_forest", "floatland_coniferous_forest"},
 		y_min = 2,
 		y_max = 31000,
-		schematic = minetest.get_modpath("amber") .. "/schematics/amber_pine_trunk1.mts",
+		schematic = core.get_modpath("amber") .. "/schematics/amber_pine_trunk1.mts",
 		flags = "place_center_x, place_center_z, place_center_y = false",
 })
 
-minetest.register_decoration({
+core.register_decoration({
 		deco_type = "schematic",
 		place_on = {"default:dirt_with_snow", "default:dirt_with_grass"},
 		sidelen = 8,
@@ -112,11 +112,11 @@ minetest.register_decoration({
 		biomes = {"taiga", "coniferous_forest", "floatland_coniferous_forest"},
 		y_min = 2,
 		y_max = 31000,
-		schematic = minetest.get_modpath("amber") .. "/schematics/amber_pine_trunk2.mts",
+		schematic = core.get_modpath("amber") .. "/schematics/amber_pine_trunk2.mts",
 		flags = "place_center_x, place_center_z, place_center_y = false",
 })
 
-minetest.register_decoration({
+core.register_decoration({
 		deco_type = "schematic",
 		place_on = {"default:dirt_with_snow", "default:dirt_with_grass"},
 		sidelen = 8,
@@ -124,11 +124,11 @@ minetest.register_decoration({
 		biomes = {"taiga", "coniferous_forest", "floatland_coniferous_forest"},
 		y_min = 2,
 		y_max = 31000,
-		schematic = minetest.get_modpath("amber") .. "/schematics/amber_pine_trunk3.mts",
+		schematic = core.get_modpath("amber") .. "/schematics/amber_pine_trunk3.mts",
 		flags = "place_center_x, place_center_z, place_center_y = false",
 })
 
-minetest.register_decoration({
+core.register_decoration({
 		deco_type = "schematic",
 		place_on = {"default:dirt_with_snow", "default:dirt_with_grass"},
 		sidelen = 8,
@@ -136,13 +136,13 @@ minetest.register_decoration({
 		biomes = {"taiga", "coniferous_forest", "floatland_coniferous_forest"},
 		y_min = 2,
 		y_max = 31000,
-		schematic = minetest.get_modpath("amber") .. "/schematics/amber_pine_trunk4.mts",
+		schematic = core.get_modpath("amber") .. "/schematics/amber_pine_trunk4.mts",
 		flags = "place_center_x, place_center_z, place_center_y = false",
 })
 
 -- Root System --
 
-minetest.register_ore({
+core.register_ore({
 		ore_type        = "blob",
 		ore             = "air",
 		wherein         = {"default:stone", "default:stone_with_coal", "default:stone_with_iron", "default:stone_with_copper", "default:stone_with_tin", "default:gravel", "default:sand", "default:silver_sand"},
@@ -160,7 +160,7 @@ minetest.register_ore({
 		}
 	})
 
-minetest.register_ore({
+core.register_ore({
 		ore_type        = "blob",
 		ore             = "amber:root_wall",
 		wherein         = {"default:stone", "default:stone_with_coal", "default:stone_with_iron", "default:stone_with_copper", "default:stone_with_tin", "default:gravel", "default:sand", "default:silver_sand"},
@@ -178,7 +178,7 @@ minetest.register_ore({
 		}
 	})
 
-	minetest.register_ore({
+	core.register_ore({
 			ore_type        = "blob",
 			ore             = "amber:root_wall",
 			wherein         = {"default:stone", "default:stone_with_coal", "default:stone_with_iron", "default:stone_with_copper", "default:stone_with_tin", "default:gravel", "default:sand", "default:silver_sand"},
@@ -196,7 +196,7 @@ minetest.register_ore({
 			}
 		})
 
-	minetest.register_ore({
+	core.register_ore({
 			ore_type       = "scatter",
 			ore            = "air",
 			wherein        = {"amber:root_wall", "default:stone", "default:stone_with_coal", "default:stone_with_iron", "default:stone_with_copper", "default:stone_with_tin", "default:gravel", "default:sand", "default:silver_sand"},
@@ -210,7 +210,7 @@ minetest.register_ore({
 
 -- Root system Decorations --
 -- Roots --
-minetest.register_ore({
+core.register_ore({
 		ore_type        = "blob",
 		ore             = "amber:tree_all",
 		wherein         = {"default:water_source", "air", "amber:root_wall", "default:stone", "default:stone_with_coal", "default:stone_with_iron", "default:stone_with_copper", "default:stone_with_tin", "default:gravel", "default:sand", "default:silver_sand"},
@@ -228,7 +228,7 @@ minetest.register_ore({
 		},
 })
 
-minetest.register_ore({
+core.register_ore({
 		ore_type       = "scatter",
 		ore            = "amber:root_wall",
 		wherein        = {"amber:root_wall", "default:stone"},
@@ -239,7 +239,7 @@ minetest.register_ore({
 		y_max          = -16,
 })
 
-minetest.register_ore({
+core.register_ore({
 		ore_type       = "scatter",
 		ore            = "amber:root_wall_light",
 		wherein        = "amber:root_wall",
@@ -250,7 +250,7 @@ minetest.register_ore({
 		y_max          = -32,
 })
 
-minetest.register_ore({
+core.register_ore({
 		ore_type       = "scatter",
 		ore            = "amber:root",
 		wherein        = "air",
@@ -261,7 +261,7 @@ minetest.register_ore({
 		y_max          = -16,
 })
 
-minetest.register_ore({
+core.register_ore({
 		ore_type        = "blob",
 		ore             = "amber:tree_all",
 		wherein         = {"default:water_source", "air", "amber:root_wall", "default:stone", "default:stone_with_coal", "default:stone_with_iron", "default:stone_with_copper", "default:stone_with_tin", "default:gravel", "default:sand", "default:silver_sand"},
@@ -279,7 +279,7 @@ minetest.register_ore({
 		},
 })
 
-minetest.register_ore({
+core.register_ore({
 		ore_type       = "scatter",
 		ore            = "amber:ambertree_green",
 		wherein        = {"amber:tree_all"},
@@ -292,7 +292,7 @@ minetest.register_ore({
 
 -- Dirt --
 
-minetest.register_ore({
+core.register_ore({
 		ore_type        = "blob",
 		ore             = "default:dirt",
 		wherein         = {"amber:root_wall", "air"},
@@ -311,7 +311,7 @@ minetest.register_ore({
 		},
 })
 
-minetest.register_ore({
+core.register_ore({
 		ore_type       = "scatter",
 		ore            = "default:dirt",
 		wherein        = "amber:root_wall",
@@ -322,7 +322,7 @@ minetest.register_ore({
 		y_max          = -32,
 })
 
-minetest.register_ore({
+core.register_ore({
 		ore_type       = "scatter",
 		ore            = "default:dirt",
 		wherein        = "amber:root_wall",
@@ -333,7 +333,7 @@ minetest.register_ore({
 		y_max          = -32,
 })
 
-minetest.register_ore({
+core.register_ore({
 		ore_type       = "scatter",
 		ore            = "default:dirt",
 		wherein        = "amber:root_wall",
@@ -346,7 +346,7 @@ minetest.register_ore({
 
 -- Walls in Dirt --
 
-minetest.register_ore({
+core.register_ore({
 		ore_type       = "scatter",
 		ore            = "amber:root_wall",
 		wherein        = "default:dirt",
@@ -357,7 +357,7 @@ minetest.register_ore({
 		y_max          = -32,
 })
 
-minetest.register_ore({
+core.register_ore({
 		ore_type       = "scatter",
 		ore            = "amber:root_wall",
 		wherein        = "default:dirt",
@@ -370,7 +370,7 @@ minetest.register_ore({
 
 -- Amber ores --
 
-minetest.register_ore({
+core.register_ore({
 		ore_type       = "scatter",
 		ore            = "amber:ambertree_root",
 		wherein        = "amber:tree_all",
@@ -381,7 +381,7 @@ minetest.register_ore({
 		y_max          = -32,
 })
 
-minetest.register_ore({
+core.register_ore({
 		ore_type       = "scatter",
 		ore            = "amber:ambertree_root_small",
 		wherein        = "amber:tree_all",
@@ -393,7 +393,7 @@ minetest.register_ore({
 })
 -- Light --
 
-minetest.register_ore({
+core.register_ore({
 		ore_type       = "scatter",
 		ore            = "amber:particle_spawner",
 		wherein        = "air",
@@ -404,7 +404,7 @@ minetest.register_ore({
 		y_max          = -32,
 })
 
-minetest.register_abm{
+core.register_abm{
   label = "lightup",
 	nodenames = {"amber:particle_spawner"},
 	interval = 8,
