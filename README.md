@@ -22,6 +22,11 @@ Amber can also be crafted into armor if you have 3d_armor mod.
     - [GitHub](https://github.com/AntumLuanti/mod-amber)
     - [GitLab](https://gitlab.com/AntumLuanti/mod-amber)
 
+## TODO
+
+- use [xcompat](https://content.luanti.org/packages/mt-mods/xcompat/)
+
+
 [Luanti]: https://www.luanti.org/
 [amber.orig]: https://forum.luanti.org/viewtopic.php?t=18186
 [amber.orig.git]: https://github.com/theraven262/amber
