@@ -1,5 +1,5 @@
 # Amber Mod
-Minetest mod that adds amber.
+Luanti mod that adds amber.
 
 Amber can be found in ancient tree trunks that are full of it, in dirt (rarely) and in mud if you have darkage mod.
 It can be crafted into tools, which support toolranks mod.
