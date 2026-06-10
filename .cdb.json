@@ -1,0 +1,20 @@
+{
+	"$schema": "https://content.luanti.org/api/cdb_schema/",
+	"type": "MOD",
+	"title": "Amber",
+	"name": "amber",
+	"short_description": "Adds amber tools, decorations, & two armor sets.",
+	"dev_state": "ACTIVELY_DEVELOPED",
+	"ai_disclosure": "NONE",
+	"tags": ["mapgen", "tools"],
+	"content_warnings": null,
+	"license": "LGPL-2.1-only",
+	"media_license": "LGPL-2.1-only",
+	"repo": "https://codeberg.org/AntumLuanti/mod-amber",
+	"issue_tracker": "https://codeberg.org/AntumLuanti/mod-amber/issues",
+	"website": null,
+	"forums": 18186,
+	"video_url": null,
+	"donate_url": null,
+	"translation_url": null
+}
