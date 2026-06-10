@@ -18,7 +18,7 @@ amber.create_ancient_description = function(n)
 end
 
 -- Pickaxe --
-minetest.register_tool("amber:pickaxe", {
+core.register_tool("amber:pickaxe", {
 	description = amber.create_description(1),
 	inventory_image = "amber_pickaxe.png",
 	tool_capabilities = {
@@ -34,7 +34,7 @@ minetest.register_tool("amber:pickaxe", {
 
 -- Shovel --
 
-minetest.register_tool("amber:shovel", {
+core.register_tool("amber:shovel", {
 	description = amber.create_description(2),
 	inventory_image = "amber_shovel.png",
 	wield_image = "amber_shovel.png^[transformR90",
@@ -51,7 +51,7 @@ minetest.register_tool("amber:shovel", {
 
 -- Axe --
 
-minetest.register_tool("amber:axe", {
+core.register_tool("amber:axe", {
 	description = amber.create_description(3),
 	inventory_image = "amber_axe.png",
 	tool_capabilities = {
@@ -67,7 +67,7 @@ minetest.register_tool("amber:axe", {
 
 -- Sword --
 
-minetest.register_tool("amber:sword", {
+core.register_tool("amber:sword", {
 	description = amber.create_description(4),
 	inventory_image = "amber_sword.png",
 	tool_capabilities = {
@@ -81,9 +81,9 @@ minetest.register_tool("amber:sword", {
 	sound = {breaks = "default_tool_breaks"},
 })
 -- Toolranks Support --
-if minetest.get_modpath("toolranks") then
+if core.get_modpath("toolranks") then
 for n=1,4 do
-  minetest.override_item("amber:" .. tooltypes[n]:lower(), {
+  core.override_item("amber:" .. tooltypes[n]:lower(), {
   original_description = "Amber " .. tooltypes[n],
   description = toolranks.create_description("Amber " .. tooltypes[n], 0, 1),
   after_use = toolranks.new_afteruse,
@@ -93,7 +93,7 @@ end
 
 -- Ancient Tools --
 local anch_color = "006699"
-minetest.register_tool("amber:pickaxe_ancient", {
+core.register_tool("amber:pickaxe_ancient", {
 	description = amber.create_ancient_description(1),
 	inventory_image = "amber_pickaxe.png^(amber_outline_pickaxe.png^[colorize:#" .. anch_color .. ")",
 	wield_image = "amber_pickaxe.png",
@@ -110,7 +110,7 @@ minetest.register_tool("amber:pickaxe_ancient", {
 
 -- Shovel --
 
-minetest.register_tool("amber:shovel_ancient", {
+core.register_tool("amber:shovel_ancient", {
 	description = amber.create_ancient_description(2),
 	inventory_image = "amber_shovel.png^(amber_outline_shovel.png^[colorize:#" .. anch_color .. ")",
 	wield_image = "amber_shovel.png^[transformR90",
@@ -127,7 +127,7 @@ minetest.register_tool("amber:shovel_ancient", {
 
 -- Axe --
 
-minetest.register_tool("amber:axe_ancient", {
+core.register_tool("amber:axe_ancient", {
 	inventory_image = "amber_axe.png^(amber_outline_axe.png^[colorize:#" .. anch_color .. ")",
 	wield_image = "amber_axe.png",
 	tool_capabilities = {
@@ -143,7 +143,7 @@ minetest.register_tool("amber:axe_ancient", {
 
 -- Sword --
 
-minetest.register_tool("amber:sword_ancient", {
+core.register_tool("amber:sword_ancient", {
 	description = amber.create_ancient_description(4),
 	inventory_image = "amber_sword.png^(amber_outline_sword.png^[colorize:#" .. anch_color .. ")",
 	wield_image = "amber_sword.png",
@@ -159,9 +159,9 @@ minetest.register_tool("amber:sword_ancient", {
 })
 
 -- Toolranks Support --
-if minetest.get_modpath("toolranks") then
+if core.get_modpath("toolranks") then
 for n=1,4 do
-  minetest.override_item("amber:" .. tooltypes[n]:lower() .. "_ancient", {
+  core.override_item("amber:" .. tooltypes[n]:lower() .. "_ancient", {
   original_description = "Ancient Amber " .. tooltypes[n],
   description = toolranks.create_description("Ancient Amber " .. tooltypes[n], 0, 1),
   after_use = toolranks.new_afteruse,

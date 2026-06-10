@@ -4,15 +4,15 @@
 -- Sediments --
 -- Dirt --
 
-minetest.register_node("amber:dirt", {
+core.register_node("amber:dirt", {
 	description = "Dirt With Amber",
 	tiles = {"default_dirt.png^amber_sediment.png"},
 	groups = {crumbly = 3, soil = 1},
 	drop = "amber:amber",
 	sounds = default.node_sound_glass_defaults(),
 })
-if minetest.get_modpath("darkage") then
-minetest.register_node("amber:mud", {
+if core.get_modpath("darkage") then
+core.register_node("amber:mud", {
 	description = "Mud With Amber",
 	tiles = {"darkage_mud_top.png", "darkage_mud.png^amber_sediment.png"},
 	is_ground_content = true,
@@ -26,7 +26,7 @@ end
 
 -- Crafted Nodes --
 
-minetest.register_node("amber:lamp", {
+core.register_node("amber:lamp", {
     description = "Amber Lamp",
     drawtype = "plantlike",
 		tiles = {"amber_lamp.png"},
@@ -43,11 +43,11 @@ minetest.register_node("amber:lamp", {
 		light_source = 12,
     on_blast = function() end,
 		on_construct = function(pos)
-		       minetest.get_node_timer(pos):start(0.4) -- start timer
+		       core.get_node_timer(pos):start(0.4) -- start timer
 		    end,
 		    on_timer = function(pos, elapsed)
 		        light_it_up(pos)
-		        minetest.get_node_timer(pos):start(0.1) -- set timer to every 1 second
+		        core.get_node_timer(pos):start(0.1) -- set timer to every 1 second
 		    end,
 		groups = {cracky = 3, oddly_breakable_by_hand = 3},
 		sounds = default.node_sound_glass_defaults(),
@@ -62,7 +62,7 @@ light_it_up = function(pos)
 			local x = size * math.cos(angle)
 			local z = size * math.sin(angle)
 			local newpos = {x = pos.x + x, y = pos.y+0.3, z = pos.z + z}
-minetest.add_particle({
+core.add_particle({
 		pos = newpos,
 		velocity = {x = -1*x/2, y = 1, z = -1*z/2},
 		acceleration = {x = 0, y = 0, z = 0},
@@ -82,7 +82,7 @@ end
 end
 
 -- Tree Trunks --
-minetest.register_node("amber:ambertree", {
+core.register_node("amber:ambertree", {
 	description = "Tree With Amber",
 	tiles = {"(default_tree_top.png^[colorize:#80800099)^amber_ore_top.png", "(default_tree_top.png^[colorize:#80800099)^amber_ore_top.png",
 		"(default_tree.png^[colorize:#80800099)^amber_ore.png"},
@@ -92,10 +92,10 @@ minetest.register_node("amber:ambertree", {
 	groups = {tree = 1, choppy = 2, oddly_breakable_by_hand = 1, flammable = 2, not_in_creative_inventory = 1},
 	sounds = default.node_sound_glass_defaults(),
 
-	on_place = minetest.rotate_node
+	on_place = core.rotate_node
 })
 
-minetest.register_node("amber:ambertree_small", {
+core.register_node("amber:ambertree_small", {
 	description = "Tree With Amber",
 	tiles = {"default_tree_top.png^[colorize:#80800050", "default_tree_top.png^[colorize:#80800050",
    "(default_tree.png^[colorize:#80800050)^amber_ore_small.png"},
@@ -105,10 +105,10 @@ minetest.register_node("amber:ambertree_small", {
 	groups = {tree = 1, choppy = 2, oddly_breakable_by_hand = 1, flammable = 2, not_in_creative_inventory = 1},
 	sounds = default.node_sound_glass_defaults(),
 
-	on_place = minetest.rotate_node
+	on_place = core.rotate_node
 })
 
-minetest.register_node("amber:ambertree_pine", {
+core.register_node("amber:ambertree_pine", {
 	description = "Pine Tree With Amber",
 	tiles = {"(default_pine_tree_top.png^[colorize:#80800099)^amber_ore_top.png", "(default_pine_tree_top.png^[colorize:#80800099)^amber_ore_top.png",
 		"(default_pine_tree.png^[colorize:#80800099)^amber_ore.png"},
@@ -118,10 +118,10 @@ minetest.register_node("amber:ambertree_pine", {
 	groups = {tree = 1, choppy = 3, oddly_breakable_by_hand = 1, flammable = 3, not_in_creative_inventory = 1},
 	sounds = default.node_sound_glass_defaults(),
 
-	on_place = minetest.rotate_node
+	on_place = core.rotate_node
 })
 
-minetest.register_node("amber:ambertree_pine_small", {
+core.register_node("amber:ambertree_pine_small", {
 	description = "Tree With Amber",
 	tiles = {"default_pine_tree_top.png^[colorize:#80800050", "default_pine_tree_top.png^[colorize:#80800050",
    "(default_pine_tree.png^[colorize:#80800050)^amber_ore_small.png"},
@@ -131,12 +131,12 @@ minetest.register_node("amber:ambertree_pine_small", {
 	groups = {tree = 1, choppy = 3, oddly_breakable_by_hand = 1, flammable = 3, not_in_creative_inventory = 1},
 	sounds = default.node_sound_glass_defaults(),
 
-	on_place = minetest.rotate_node
+	on_place = core.rotate_node
 })
 
 -- Root Amber Trees --
 
-minetest.register_node("amber:ambertree_root", {
+core.register_node("amber:ambertree_root", {
 	description = "Tree With Amber",
 	tiles = {"((default_tree.png^[colorize:#80800099)^amber_ore.png)^amber_root.png"},
 	paramtype2 = "facedir",
@@ -145,10 +145,10 @@ minetest.register_node("amber:ambertree_root", {
 	groups = {tree = 1, choppy = 2, oddly_breakable_by_hand = 1, flammable = 2, not_in_creative_inventory = 1},
 	sounds = default.node_sound_glass_defaults(),
 
-	on_place = minetest.rotate_node
+	on_place = core.rotate_node
 })
 
-minetest.register_node("amber:ambertree_root_small", {
+core.register_node("amber:ambertree_root_small", {
 	description = "Tree With Amber",
 	tiles = {"((default_tree.png^[colorize:#80800050)^amber_ore_small.png)^amber_root.png"},
 	paramtype2 = "facedir",
@@ -157,10 +157,10 @@ minetest.register_node("amber:ambertree_root_small", {
 	groups = {tree = 1, choppy = 2, oddly_breakable_by_hand = 1, flammable = 2, not_in_creative_inventory = 1},
 	sounds = default.node_sound_glass_defaults(),
 
-	on_place = minetest.rotate_node
+	on_place = core.rotate_node
 })
 
-minetest.register_node("amber:ambertree_green", {
+core.register_node("amber:ambertree_green", {
 	description = "Tree With Green Sediments",
 	tiles = {"((default_tree.png^[colorize:#00800025)^amber_green_sediment.png)^amber_root.png"},
 	paramtype2 = "facedir",
@@ -170,12 +170,12 @@ minetest.register_node("amber:ambertree_green", {
 	groups = {tree = 1, choppy = 2, oddly_breakable_by_hand = 1, flammable = 2},
 	sounds = default.node_sound_glass_defaults(),
 
-	on_place = minetest.rotate_node
+	on_place = core.rotate_node
 })
 
 -- Decorations --
 
-minetest.register_node("amber:bricks", {
+core.register_node("amber:bricks", {
 	description = "Amber Bricks",
 	tiles = {"amber_bricks.png"},
 	is_ground_content = false,
@@ -183,7 +183,7 @@ minetest.register_node("amber:bricks", {
 	sounds = default.node_sound_glass_defaults(),
 })
 
-minetest.register_node("amber:bricks_scarab", {
+core.register_node("amber:bricks_scarab", {
 	description = "Decorated Amber Bricks",
 	tiles = {"amber_bricks.png^amber_brick_scarab_overlay.png"},
 	is_ground_content = false,
@@ -193,7 +193,7 @@ minetest.register_node("amber:bricks_scarab", {
 	sounds = default.node_sound_glass_defaults(),
 })
 
-minetest.register_node("amber:block", {
+core.register_node("amber:block", {
 	description = "Amber Block",
 	tiles = {"amber_block.png"},
 	is_ground_content = false,
@@ -201,7 +201,7 @@ minetest.register_node("amber:block", {
 	sounds = default.node_sound_glass_defaults(),
 })
 
-minetest.register_node("amber:block_eye", {
+core.register_node("amber:block_eye", {
 	description = "Decorated Amber Block",
 	tiles = {"amber_block.png^amber_block_eye_overlay.png"},
 	is_ground_content = false,
@@ -211,7 +211,7 @@ minetest.register_node("amber:block_eye", {
 	sounds = default.node_sound_glass_defaults(),
 })
 
-minetest.register_node("amber:block_frame", {
+core.register_node("amber:block_frame", {
 	description = "Decorated Amber Block",
 	tiles = {"amber_block.png^amber_frame_overlay.png"},
 	is_ground_content = false,
@@ -221,7 +221,7 @@ minetest.register_node("amber:block_frame", {
 	sounds = default.node_sound_glass_defaults(),
 })
 
-minetest.register_node("amber:block_sun_edge", {
+core.register_node("amber:block_sun_edge", {
 	description = "Decorated Amber Block",
 	tiles = {"amber_block.png^amber_sun_edge_overlay.png"},
 	is_ground_content = false,
@@ -231,7 +231,7 @@ minetest.register_node("amber:block_sun_edge", {
 	sounds = default.node_sound_glass_defaults(),
 })
 
-minetest.register_node("amber:block_sun", {
+core.register_node("amber:block_sun", {
 	description = "Decorated Amber Block",
 	tiles = {"amber_block.png^amber_sun_overlay.png"},
 	is_ground_content = false,
@@ -241,7 +241,7 @@ minetest.register_node("amber:block_sun", {
 	sounds = default.node_sound_glass_defaults(),
 })
 
-if minetest.get_modpath("moreblocks") then
+if core.get_modpath("moreblocks") then
 stairsplus:register_all("amber", "bricks", "amber:bricks", {
 	description = "Amber Brick",
 	tiles = {"amber_bricks.png"},
@@ -257,7 +257,7 @@ stairsplus:register_all("amber", "block", "amber:block", {
 })
 end
 
-minetest.register_node("amber:glass", {
+core.register_node("amber:glass", {
 	description = "Amber Glass",
 	tiles = {"amber_glass.png"},
 	drawtype = "allfaces",
@@ -269,7 +269,7 @@ minetest.register_node("amber:glass", {
 	sounds = default.node_sound_glass_defaults(),
 })
 
-minetest.register_node("amber:glass_medieval", {
+core.register_node("amber:glass_medieval", {
 	description = "Amber Medieval Glass",
 	tiles = {"amber_glass_medieval.png"},
 	drawtype = "allfaces",
@@ -284,7 +284,7 @@ minetest.register_node("amber:glass_medieval", {
 -- Root System Nodes --
 
 
-minetest.register_node("amber:root_wall", {
+core.register_node("amber:root_wall", {
 	description = "Root System Wall",
 	tiles = {"amber_root_wall.png^amber_root.png"},
 	is_ground_content = true,
@@ -292,7 +292,7 @@ minetest.register_node("amber:root_wall", {
 	sounds = default.node_sound_wood_defaults(),
 })
 
-minetest.register_node("amber:root_wall_light", {
+core.register_node("amber:root_wall_light", {
 	description = "Root System Wall Light",
 	tiles = {"((amber_root_wall.png^[colorize:#00800025)^amber_green_sediment.png)^amber_root.png"},
 	is_ground_content = true,
@@ -303,7 +303,7 @@ minetest.register_node("amber:root_wall_light", {
 	sounds = default.node_sound_glass_defaults(),
 })
 
-minetest.register_node("amber:tree_all", {
+core.register_node("amber:tree_all", {
 	description = "Tree",
 	tiles = {"default_tree.png^(amber_root.png^[transformR90)"},
 	is_ground_content = false,
@@ -313,7 +313,7 @@ minetest.register_node("amber:tree_all", {
 
 -- Root System Vegetation --
 
-minetest.register_node("amber:root", {
+core.register_node("amber:root", {
 	description = "Root Branch",
 	drawtype = "nodebox",
 	node_box = {
@@ -360,7 +360,7 @@ do_circle = function(pos)
 				local y = size * math.sin(angle)
         local newpos = {x = pos.x + x, y = pos.y + y, z = pos.z + z}
 
-        minetest.add_particle({
+        core.add_particle({
             pos = newpos,
             velocity = {x = math.random(0, angle)/100, y = math.random(0, angle)/100, z = math.random(0, angle)/100},
             acceleration = {x = -0.01, y = -0.01, z = -0.01},
@@ -379,7 +379,7 @@ do_circle = function(pos)
 	end
 end
 
-minetest.register_node("amber:particle_spawner", {
+core.register_node("amber:particle_spawner", {
     description = "Particles!",
     drawtype = "airlike",
 		paramtype = "light",
@@ -393,7 +393,7 @@ minetest.register_node("amber:particle_spawner", {
 })
 
 -- Misc --
-if minetest.get_modpath("3d_armor") then
+if core.get_modpath("3d_armor") then
 n=9
 else
 n=4
@@ -410,7 +410,7 @@ types = {
 		"Shield"
 }
 for i=1,n do
-minetest.register_node("amber:matrix_" .. types[i]:lower(), {
+core.register_node("amber:matrix_" .. types[i]:lower(), {
 	description = "Amber " .. types[i] .. " Matrix",
 	tiles = {
 		"amber_matrix_top.png^amber_symbol_" .. types[i]:lower() .. ".png",
